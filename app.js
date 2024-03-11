@@ -1,3 +1,5 @@
+// app.js
+
 function updateTime() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -6,12 +8,21 @@ function updateTime() {
   document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
 }
 
+function updateBattery(battery) {
+  const batteryElement = document.getElementById('battery');
+  batteryElement.textContent = `Battery: ${(battery.level * 100).toFixed(2)}%`;
+}
+
 setInterval(updateTime, 1000);
 
-// Register service worker
+navigator.getBattery().then(battery => {
+  updateBattery(battery);
+  battery.addEventListener('levelchange', () => updateBattery(battery));
+});
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/screensaver/sw.js')
+    navigator.serviceWorker.register('/sw.js')
       .then(registration => {
         console.log('Service Worker registered:', registration);
       })
