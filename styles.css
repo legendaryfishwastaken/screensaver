@@ -23,7 +23,9 @@ body {
 }
 
 #playlist-url {
-  margin-top: 20px; /* Adjust top margin */
+  position: absolute;
+  top: calc(50% + 50px); /* Position the input directly below the music player */
+  left: 20px; /* Align the input with the music player */
   padding: 5px;
   width: 300px; /* Adjust width */
   font-size: 16px;
