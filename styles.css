@@ -9,6 +9,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  height: 100vh; /* Set body height to viewport height */
   position: relative; /* Added for positioning the clock and battery */
 }
 
@@ -18,6 +20,7 @@ body {
   left: 20px; /* Move the music player to the left */
   transform: translateY(-50%);
   border-radius: 10px; /* Round the corners */
+  margin-top: 300px; /* Adjust margin to move the music player down */
 }
 
 #playlist-url {
