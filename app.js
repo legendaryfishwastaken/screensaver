@@ -4,10 +4,12 @@ const wallpapers = [
   'https://images7.alphacoders.com/133/thumb-440-1337829.webp',
   // Add more wallpaper URLs here
 ];
-
 const setRandomWallpaper = () => {
   const randomIndex = Math.floor(Math.random() * wallpapers.length);
-  document.body.style.backgroundImage = `url(${wallpapers[randomIndex]})`;
+  const randomWallpaperUrl = wallpapers[randomIndex];
+  const styleTag = document.createElement('style');
+  styleTag.innerHTML = `body { background-image: url(${randomWallpaperUrl}); }`;
+  document.head.appendChild(styleTag);
 };
 
 setRandomWallpaper();
