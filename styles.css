@@ -10,35 +10,39 @@ body {
   position: relative; /* Added for positioning the clock and battery */
 }
 
-#clock, #battery {
-  font-size: 48px; /* Increased clock and battery font size */
+#youtube-player {
   position: absolute;
-}
-
-#clock {
-  top: 20px;
-  left: 20px;
-}
-
-#battery {
-  top: 20px;
-  right: 20px;
-}
-
-.battery-icon {
-  display: inline-block;
-  width: 48px; /* Set battery icon width to match clock font size */
-  height: 24px; /* Set battery icon height to match clock font size */
-  background-color: #fff; /* White background for battery icon */
-  position: relative;
-  margin-right: 5px;
-}
-
-.battery-level {
-  position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  height: 100%;
-  background-color: #2ecc71; /* Green color for battery level indicator */
-  width: 0; /* Initial width of battery level indicator */
+  width: 640px; /* Adjust player width */
+  height: 360px; /* Adjust player height */
+}
+
+#controls {
+  position: absolute;
+  top: 20px;
+  left: 660px; /* Position controls to the right of the player */
+}
+
+button {
+  font-size: 16px; /* Adjust button font size */
+  padding: 10px 20px; /* Adjust button padding */
+  margin-right: 10px; /* Add spacing between buttons */
+  background-color: #3498db; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Add button border radius */
+  cursor: pointer;
+}
+
+input {
+  font-size: 16px; /* Adjust input font size */
+  padding: 10px; /* Adjust input padding */
+  margin-right: 10px; /* Add spacing between input and buttons */
+  border: 1px solid #ccc; /* Input border */
+  border-radius: 5px; /* Input border radius */
+}
+
+button:hover {
+  background-color: #2980b9; /* Button hover background color */
 }
