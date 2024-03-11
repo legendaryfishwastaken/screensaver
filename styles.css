@@ -29,7 +29,7 @@ body {
   display: inline-block;
   width: 48px; /* Set battery icon width to match clock font size */
   height: 24px; /* Set battery icon height to match clock font size */
-  background-color: #fff;
+  background-color: #fff; /* White background for battery icon */
   position: relative;
   margin-right: 5px;
 }
@@ -39,6 +39,6 @@ body {
   bottom: 0;
   left: 0;
   height: 100%;
-  background-color: #2ecc71;
+  background-color: #2ecc71; /* Green color for battery level indicator */
   width: 0; /* Initial width of battery level indicator */
 }
