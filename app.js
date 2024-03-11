@@ -1,7 +1,7 @@
 const wallpapers = [
-  'url1',
-  'url2',
-  'url3',
+  'https://images7.alphacoders.com/133/thumb-440-1330715.webp',
+  'https://images3.alphacoders.com/133/thumb-440-1330825.webp',
+  'https://images7.alphacoders.com/133/thumb-440-1337829.webp',
   // Add more wallpaper URLs here
 ];
 
