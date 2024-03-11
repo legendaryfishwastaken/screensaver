@@ -1,13 +1,21 @@
 {
-  "name": "Wallpaper Rotator",
-  "short_name": "Wallpaper",
-  "start_url": "./index.html",
+  "name": "Wallpaper Clock",
+  "short_name": "WallClock",
+  "description": "A wallpaper clock PWA",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
+  ]
+}
