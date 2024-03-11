@@ -5,8 +5,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/app.js',
-  '/styles.css',
-  '/wallpaper.jpg' // Adjust the path to match your directory structure
+  '/styles.css'
 ];
 
 self.addEventListener('install', event => {
