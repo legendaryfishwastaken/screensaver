@@ -20,18 +20,3 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
-
-// Keep screen always on
-if ('wakeLock' in navigator) {
-  const requestWakeLock = async () => {
-    try {
-      const wakeLock = await navigator.wakeLock.request('screen');
-      console.log('Screen wake lock is active:', wakeLock.isActive);
-    } catch (err) {
-      console.error(`${err.name}, ${err.message}`);
-    }
-  };
-  requestWakeLock();
-} else {
-  console.error('Wake Lock API is not supported.');
-}
