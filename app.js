@@ -1,10 +1,10 @@
 // app.js
 
-document.getElementById('load-playlist').addEventListener('click', function() {
+function loadPlaylist() {
   const playlistUrl = document.getElementById('playlist-url').value;
-  const iframe = document.querySelector('#spotify-player iframe');
-  iframe.src = playlistUrl;
-});
+  const spotifyIframe = document.getElementById('spotify-iframe');
+  spotifyIframe.src = playlistUrl;
+}
 
 function updateTime() {
   const now = new Date();
