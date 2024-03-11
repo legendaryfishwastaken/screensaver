@@ -2,7 +2,9 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #000;
+  background-image: url('https://wallpapers.com/images/thumbnail/beautiful-dark-night-streets-87lgjidjoyjc81sc.webp');
+  background-size: cover;
+  background-position: center;
   font-family: 'Roboto', sans-serif;
 }
 
