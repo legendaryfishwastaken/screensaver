@@ -1,6 +1,6 @@
 {
-  "name": "Wallpaper Clock",
-  "short_name": "WallClock",
+  "name": "Screensaver",
+  "short_name": "SS",
   "description": "A wallpaper clock PWA",
   "start_url": "/index.html",
   "display": "standalone",
