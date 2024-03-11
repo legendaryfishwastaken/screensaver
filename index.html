@@ -9,9 +9,8 @@
 </head>
 <body>
   <div id="spotify-player">
-    <iframe src="https://open.spotify.com/embed/playlist/YOUR_PLAYLIST_ID" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    <input type="text" id="playlist-url" placeholder="Paste playlist URL">
-    <button id="load-playlist">Load Playlist</button>
+    <iframe id="spotify-iframe" src="https://open.spotify.com/embed/playlist/YOUR_PLAYLIST_ID" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <input type="text" id="playlist-url" placeholder="Paste playlist URL" onchange="loadPlaylist()">
   </div>
   <div id="clock"></div>
   <div id="battery">
