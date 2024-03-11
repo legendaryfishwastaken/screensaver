@@ -9,8 +9,9 @@ function updateTime() {
 }
 
 function updateBattery(battery) {
-  const batteryElement = document.getElementById('battery');
-  batteryElement.textContent = `Battery: ${(battery.level * 100).toFixed(2)}%`;
+  const batteryLevelElement = document.getElementById('battery-level');
+
+  batteryLevelElement.style.width = `${battery.level * 100}%`;
 }
 
 setInterval(updateTime, 1000);
