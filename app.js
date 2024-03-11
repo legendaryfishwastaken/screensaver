@@ -11,6 +11,17 @@ function updateTime() {
 function updateBattery(battery) {
   const batteryLevelElement = document.querySelector('.battery-level');
 
+  const batteryIconElement = document.querySelector('.battery-icon');
+  if (battery.level > 0.75) {
+    batteryLevelElement.style.backgroundColor = '#2ecc71'; // Green
+    batteryIconElement.style.backgroundColor = '#fff'; // White
+  } else if (battery.level > 0.25) {
+    batteryLevelElement.style.backgroundColor = '#f1c40f'; // Yellow
+    batteryIconElement.style.backgroundColor = '#fff'; // White
+  } else {
+    batteryLevelElement.style.backgroundColor = '#e74c3c'; // Red
+    batteryIconElement.style.backgroundColor = '#fff'; // White
+  }
   batteryLevelElement.style.width = `${battery.level * 100}%`;
 }
 
