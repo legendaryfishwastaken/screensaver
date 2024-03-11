@@ -1,38 +1,37 @@
-const wallpapers = [
-  'https://images7.alphacoders.com/133/thumb-440-1330715.webp',
-  'https://images3.alphacoders.com/133/thumb-440-1330825.webp',
-  'https://images7.alphacoders.com/133/thumb-440-1337829.webp',
-  // Add more wallpaper URLs here
-]
-const setRandomWallpaper = () => {
-  const randomIndex = Math.floor(Math.random() * wallpapers.length);
-  const randomWallpaperUrl = wallpapers[randomIndex];
-  const styleTag = document.createElement('style');
-  styleTag.innerHTML = `body { background-image: url(${randomWallpaperUrl}); }`;
-  document.body.appendChild(styleTag);
-};
+function updateTime() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
 
-setRandomWallpaper();
+setInterval(updateTime, 1000);
 
-setInterval(setRandomWallpaper, 30000); // Change wallpaper every 30 seconds
-let wakeLock = null;
+// Register service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker registered:', registration);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+  });
+}
 
-const requestWakeLock = async () => {
-  try {
-    wakeLock = await navigator.wakeLock.request('screen');
-    console.log('Screen wake lock active');
-  } catch (error) {
-    console.error('Failed to activate screen wake lock: ', error);
-  }
-};
-
-requestWakeLock();
-
-// Release the wake lock when the page is hidden or closed
-window.addEventListener('blur', () => {
-  if (wakeLock) {
-    wakeLock.release();
-    wakeLock = null;
-    console.log('Screen wake lock released');
-  }
-});
+// Keep screen always on
+if ('wakeLock' in navigator) {
+  const requestWakeLock = async () => {
+    try {
+      const wakeLock = await navigator.wakeLock.request('screen');
+      console.log('Screen wake lock is active:', wakeLock.isActive);
+    } catch (err) {
+      console.error(`${err.name}, ${err.message}`);
+    }
+  };
+  requestWakeLock();
+} else {
+  console.error('Wake Lock API is not supported.');
+}
