@@ -21,7 +21,7 @@ body {
 }
 
 #playlist-url {
-  margin-top: 10px;
+  margin-top: 20px; /* Adjust top margin */
   padding: 5px;
   width: 300px; /* Adjust width */
   font-size: 16px;
