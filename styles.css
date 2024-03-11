@@ -20,7 +20,6 @@ body {
   left: 20px; /* Move the music player to the left */
   transform: translateY(-50%);
   border-radius: 10px; /* Round the corners */
-  margin-top: 300px; /* Adjust margin to move the music player down */
 }
 
 #playlist-url {
@@ -38,6 +37,7 @@ body {
   font-size: 24px; /* Adjust font size */
   font-family: sans-serif; /* Use sans-serif font */
   font-weight: bold; /* Make the clock text bold */
+  color: #fff; /* Font Colour */
 }
 
 #battery {
