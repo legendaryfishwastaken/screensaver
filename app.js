@@ -3,19 +3,18 @@ const wallpapers = [
   'https://images3.alphacoders.com/133/thumb-440-1330825.webp',
   'https://images7.alphacoders.com/133/thumb-440-1337829.webp',
   // Add more wallpaper URLs here
-];
+]
 const setRandomWallpaper = () => {
   const randomIndex = Math.floor(Math.random() * wallpapers.length);
   const randomWallpaperUrl = wallpapers[randomIndex];
   const styleTag = document.createElement('style');
   styleTag.innerHTML = `body { background-image: url(${randomWallpaperUrl}); }`;
-  document.head.appendChild(styleTag);
+  document.body.appendChild(styleTag);
 };
 
 setRandomWallpaper();
 
 setInterval(setRandomWallpaper, 30000); // Change wallpaper every 30 seconds
-
 let wakeLock = null;
 
 const requestWakeLock = async () => {
