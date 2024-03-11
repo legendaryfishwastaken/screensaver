@@ -9,7 +9,7 @@ function updateTime() {
 }
 
 function updateBattery(battery) {
-  const batteryLevelElement = document.getElementById('battery-level');
+  const batteryLevelElement = document.querySelector('.battery-level');
 
   batteryLevelElement.style.width = `${battery.level * 100}%`;
 }
