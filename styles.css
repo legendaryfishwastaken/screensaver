@@ -11,7 +11,7 @@ body {
 }
 
 #clock {
-  font-size: 48px; /* Increased clock font size */
+  font-size: 24px; /* Increased clock font size */
   position: absolute;
   top: 20px;
   left: 20px;
