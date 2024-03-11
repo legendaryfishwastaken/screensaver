@@ -2,7 +2,7 @@
   "name": "Screensaver",
   "short_name": "SS",
   "description": "A wallpaper clock PWA",
-  "start_url": "/index.html",
+  "start_url": "/screensaver/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ffffff",
