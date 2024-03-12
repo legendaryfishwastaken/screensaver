@@ -1,11 +1,5 @@
 // app.js
 
-function loadPlaylist() {
-  const playlistUrl = document.getElementById('playlist-url').value;
-  const spotifyIframe = document.getElementById('spotify-iframe');
-  spotifyIframe.src = playlistUrl;
-}
-
 function updateTime() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -37,3 +31,26 @@ navigator.getBattery().then(battery => {
   updateBattery(battery);
   battery.addEventListener('levelchange', () => updateBattery(battery));
 });
+
+function expandPlayer() {
+  document.getElementById('spotify-player').style.width = '300px';
+}
+
+function collapsePlayer() {
+  document.getElementById('spotify-player').style.width = '50px';
+}
+
+function validateAndEmbedPlaylist() {
+  const input = document.getElementById('playlist-url');
+  const spotifyIframe = document.getElementById('spotify-iframe');
+  const url = input.value.trim();
+  const spotifyEmbedUrl = 'https://open.spotify.com/embed/playlist/';
+
+  if (url.startsWith('https://open.spotify.com/playlist/')) {
+    const playlistId = url.split('/playlist/')[1];
+    spotifyIframe.src = `${spotifyEmbedUrl}${playlistId}`;
+  } else {
+    input.value = '';
+    input.placeholder = 'Invalid Spotify playlist URL';
+  }
+}
