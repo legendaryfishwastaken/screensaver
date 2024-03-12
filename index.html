@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Made by legendary.fish-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Better Screensaver</title>
+  <title>Wallpaper Clock</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="/icon-512x512.png">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div id="spotify-player">
-    <iframe id="spotify-iframe" src="https://open.spotify.com/embed/playlist/3jvbBEm2brdjCVhLYw8tSF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    <input type="text" id="playlist-url" placeholder="Paste playlist URL" onchange="loadPlaylist()">
+  <div id="spotify-player" onmouseenter="expandPlayer()" onmouseleave="collapsePlayer()">
+    <iframe id="spotify-iframe" src="https://open.spotify.com/embed/playlist/YOUR_PLAYLIST_ID" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <input type="text" id="playlist-url" placeholder="Paste Spotify playlist URL" oninput="validateAndEmbedPlaylist()">
   </div>
   <div id="clock"></div>
   <div id="battery">
