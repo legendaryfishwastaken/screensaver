@@ -20,6 +20,11 @@ body {
   left: 20px; /* Move the music player to the left */
   transform: translateY(-50%);
   border-radius: 10px; /* Round the corners */
+  transition: left 0.3s; /* Add transition for smooth collapsing effect */
+}
+
+#spotify-player:hover {
+  left: 0; /* Move the music player to the left edge when hovered */
 }
 
 #playlist-url {
